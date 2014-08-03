@@ -153,7 +153,8 @@ module Kitchen
       def run_command(cmd, options = {})
         base_options = {
           :use_sudo => config[:use_sudo],
-          :log_subject => Thor::Util.snake_case(self.class.to_s)
+          :log_subject => Thor::Util.snake_case(self.class.to_s),
+          :environment => nil
         }.merge(options)
         super(cmd, base_options)
       end
